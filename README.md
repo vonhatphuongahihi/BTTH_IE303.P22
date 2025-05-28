@@ -50,3 +50,8 @@ mvn javafx:run
 2. Hiển thị danh sách sản phẩm nhỏ bên phải dạng grid 4 cột
 3. Có hiệu ứng hover và click cho các sản phẩm
 4. Có hiệu ứng fade khi chuyển đổi sản phẩm
+
+## Video Demo
+
+![Demo](src/main/resources/demo.gif)
+
