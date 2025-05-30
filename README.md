@@ -12,17 +12,6 @@
 - H2 Database
 - Maven
 
-## Cấu trúc dự án
-- `src/main/java/com/example/shoeshop/model/Shoe.java`: Entity class định nghĩa cấu trúc sản phẩm giày
-- `src/main/java/com/example/shoeshop/repository/ShoeRepository.java`: Repository interface để truy vấn database
-- `src/main/java/com/example/shoeshop/controller/ShoeController.java`: Controller xử lý các request API
-- `src/main/resources/schema.sql`: Script tạo bảng trong database
-- `src/main/resources/data.sql`: Script chèn dữ liệu mẫu
-- `src/main/resources/application.properties`: Cấu hình ứng dụng
-
-## API Endpoints
-- GET `/api/shoes`: Lấy danh sách tất cả sản phẩm giày
-
 ## Cách chạy ứng dụng
 1. Clone repository
 2. Chạy lệnh: `mvn spring-boot:run`
@@ -31,7 +20,6 @@
    - JDBC URL: jdbc:h2:mem:shoedb
    - Username: sa
    - Password: (để trống)
-
 ## Kết quả truy vấn
 1. CSDL
 ![Database Result](src/main/resources/db_result.png)
