@@ -1,57 +1,40 @@
 # BTTH_IE303.P22 
 
-Đây là bài tập thực hành số 3 môn IE303 - Công nghệ Java, sử dụng JavaFX để thiết kế giao diện website bán sản phẩm.
+Đây là bài tập thực hành số 4 môn IE303 - Công nghệ Java, sử dụng Spring Boot xây dựng một backend đơn giản.
 
-## Yêu cầu hệ thống
+## Yêu cầu bài tập
+1. Truy vấn từ cơ sở dữ liệu danh sách các sản phẩm giày hiện có
+2. Trả về API danh sách sản phẩm giày
 
-- Java JDK 17 trở lên
-- Maven 3.6.0 trở lên
-- IDE (khuyến nghị sử dụng IntelliJ IDEA hoặc VS Code)
+## Công nghệ sử dụng
+- Spring Boot 3.2.3
+- Spring Data JPA
+- H2 Database
+- Maven
 
 ## Cấu trúc dự án
+- `src/main/java/com/example/shoeshop/model/Shoe.java`: Entity class định nghĩa cấu trúc sản phẩm giày
+- `src/main/java/com/example/shoeshop/repository/ShoeRepository.java`: Repository interface để truy vấn database
+- `src/main/java/com/example/shoeshop/controller/ShoeController.java`: Controller xử lý các request API
+- `src/main/resources/schema.sql`: Script tạo bảng trong database
+- `src/main/resources/data.sql`: Script chèn dữ liệu mẫu
+- `src/main/resources/application.properties`: Cấu hình ứng dụng
 
-```
-BTTH_IE303.P22/
-├── pom.xml                # File cấu hình Maven
-└── src/
-    └── main/
-        ├── java/          # Mã nguồn Java
-        │   ├── MainApp.java
-        │   ├── Product.java
-        │   └── ProductData.java
-        └── resources/     # Tài nguyên 
-            ├── img1.png
-            ├── img2.png
-            └── ...
-```
+## API Endpoints
+- GET `/api/shoes`: Lấy danh sách tất cả sản phẩm giày
 
-## Cách chạy dự án
+## Cách chạy ứng dụng
+1. Clone repository
+2. Chạy lệnh: `mvn spring-boot:run`
+3. Truy cập API tại: http://localhost:8081/api/shoes
+4. Truy cập H2 Console tại: http://localhost:8081/h2-console
+   - JDBC URL: jdbc:h2:mem:shoedb
+   - Username: sa
+   - Password: (để trống)
 
-### 1. Clone dự án
-```bash
-# Clone từ nhánh BTTH3
-git clone -b BTTH3 https://github.com/vonhatphuongahihi/BTTH_IE303.P22.git
-cd BTTH_IE303.P22
-```
+## Kết quả truy vấn
+1. CSDL
+![Database Result](src/main/resources/db_result.png)
 
-### 2. Cài đặt dependencies
-```bash
-mvn clean install
-```
-
-### 3. Chạy ứng dụng
-```bash
-mvn javafx:run
-```
-
-## Tính năng chính
-
-1. Hiển thị sản phẩm lớn bên trái với đầy đủ thông tin
-2. Hiển thị danh sách sản phẩm nhỏ bên phải dạng grid 4 cột
-3. Có hiệu ứng hover và click cho các sản phẩm
-4. Có hiệu ứng fade khi chuyển đổi sản phẩm
-
-## Video Demo
-
-![Demo](src/main/resources/demo.gif)
-
+2. API 
+![API Result](src/main/resources/api_result.png)
